@@ -6,6 +6,7 @@ import com.example.vavusaitranslator.network.VavusApi
 import com.example.vavusaitranslator.network.VavusServiceFactory
 import com.example.vavusaitranslator.network.RegisterRequest
 import com.example.vavusaitranslator.network.TranslateRequest
+import com.example.vavusaitranslator.supabase.SupabaseSync
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -18,7 +19,8 @@ class VavusRepository(
     private val sessionManager: SessionManager,
     private val serviceFactory: VavusServiceFactory,
     private val languageCatalog: LocalLanguageCatalog,
-    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val supabaseSync: SupabaseSync? = null
 ) {
     private val apiState: MutableStateFlow<VavusApi?> = MutableStateFlow(null)
 
@@ -51,6 +53,7 @@ class VavusRepository(
                 username = username
             )
             apiState.value = serviceFactory.create(baseUrl)
+            supabaseSync?.recordLogin(username = username, baseUrl = baseUrl)
         }
     }
 
@@ -67,6 +70,7 @@ class VavusRepository(
             response.token?.let { token ->
                 sessionManager.persistSession(token = token, baseUrl = baseUrl, username = username)
                 apiState.value = serviceFactory.create(baseUrl)
+                supabaseSync?.recordLogin(username = username, baseUrl = baseUrl)
             }
         }
     }
@@ -97,7 +101,16 @@ class VavusRepository(
                     text = text
                 )
             )
-            response.translatedText
+            val translation = response.translatedText
+            val baseUrl = sessionManager.baseUrl.first().orEmpty()
+            val username = sessionManager.username.first().orEmpty()
+            supabaseSync?.recordTranslation(
+                username = username,
+                baseUrl = baseUrl,
+                sourceLanguage = sourceLanguage,
+                targetLanguage = targetLanguage
+            )
+            translation
         }
     }
 

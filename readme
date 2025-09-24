@@ -10,6 +10,23 @@ This project contains an Android 7.1+ application that lets users authenticate a
 - **Session handling** – Securely persists the API base URL, username, and bearer token with DataStore so credentials survive process restarts.
 - **Compose-first UI** – Material 3 design, navigation, and responsive layouts tuned for phones and tablets.
 
+## Supabase integration
+
+The project now ships with an optional Supabase client that can be used to log authentication and translation activity to a
+PostgREST table. Configuration is driven entirely by environment data so secrets never need to live in version control:
+
+1. Copy `config/runpod/supabase.env.template` to `config/runpod/supabase.env`.
+2. Populate the file with your Supabase project URL and anonymous key. You may also supply a service-role key for backend jobs
+   running on RunPod. The `.gitignore` entry ensures the populated file is never committed.
+3. Provide matching environment variables when building in CI/CD (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`).
+   The Gradle script automatically prefers project properties, then the `config/runpod` file, and finally process environment
+   variables.
+4. Create a `translator_audit_log` table in Supabase with columns that match the payload written by the app (`username`,
+   `base_url`, `event_type`, `occurred_at`, and an optional `metadata` JSON column).
+
+If the configuration values are missing the Supabase features are silently disabled and the translator continues to work against
+your MADLAD API as before.
+
 ## API expectations
 
 The application assumes your MADLAD pod exposes the following endpoints under the base URL entered on the login screen:
@@ -35,9 +52,3 @@ Android Studio Hedgehog or later is recommended for development. The project use
 
 1. Open the project in Android Studio and let Gradle sync.
 2. Update the **API Base URL** field on the login or create-account screen to point at your MAD LAD pod (for example, `https://madlad.example.com/api/`).
-3. Sign in with existing credentials or create an account (remember to supply the order number).
-4. After authentication the translator view shows the full MADLAD-400 catalog and lets you submit translation jobs.
-
-## Testing the networking layer
-
-During development you can point the application at a staging MADLAD pod or use tools like MockWebServer to simulate the endpoints described above.

@@ -1,15 +1,47 @@
+import java.io.File
+
 plugins {
     id("com.android.application") version "8.2.2"
     id("org.jetbrains.kotlin.android") version "1.9.22"
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
+
+fun String?.ifNotBlank(): String? = this?.takeIf { it.isNotBlank() }
+
+fun loadEnvFile(file: File): Map<String, String> {
+    if (!file.exists()) return emptyMap()
+    return file.readLines()
+        .map { it.trim() }
+        .filter { it.isNotEmpty() && !it.startsWith("#") }
+        .mapNotNull { line ->
+            val index = line.indexOf('=')
+            if (index <= 0) {
+                null
+            } else {
+                val key = line.substring(0, index).trim()
+                val value = line.substring(index + 1).trim()
+                if (key.isEmpty()) null else key to value
+            }
+        }
+        .toMap()
+}
+fun resolveSecret(propertyName: String, envKey: String, secrets: Map<String, String>): String {
+    return (project.findProperty(propertyName) as? String)?.trim().ifNotBlank()
+        ?: secrets[envKey]?.trim().ifNotBlank()
+        ?: System.getenv(envKey)?.trim().ifNotBlank()
+        ?: ""
+}
+
+val runpodSecrets = loadEnvFile(rootProject.file("config/runpod/supabase.env"))
+
 fun String.escapeForBuildConfig(): String =
     this.replace("\\", "\\\\").replace("\"", "\\\"")
 
 val translatorApiBaseUrl =
-    (project.findProperty("VAVUS_TRANSLATOR_API_BASE_URL") as? String)?.trim().orEmpty()
+    resolveSecret("VAVUS_TRANSLATOR_API_BASE_URL", "TRANSLATOR_API_BASE_URL", runpodSecrets)
 val supabaseUrl = (project.findProperty("VAVUS_SUPABASE_URL") as? String)?.trim().orEmpty()
 val supabaseAnonKey =
-    (project.findProperty("VAVUS_SUPABASE_ANON_KEY") as? String)?.trim().orEmpty()
+    resolveSecret("VAVUS_SUPABASE_ANON_KEY", "SUPABASE_ANON_KEY", runpodSecrets)
 
 android {
     namespace = "com.example.vavusaitranslator"
@@ -29,8 +61,7 @@ android {
     buildConfigField(
         "String",
         "SUPABASE_URL",
-        "\"${supabaseUrl.escapeForBuildConfig()}\""
-    )
+        "\"${supabaseUrl.escapeForBuildConfig()}\""    )
     buildConfigField(
         "String",
         "SUPABASE_ANON_KEY",
@@ -98,7 +129,10 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    val supabaseBom = platform("io.github.jan-tennert.supabase:bom:2.3.1")
+    implementation(supabaseBom)
+    implementation("io.github.jan-tennert.supabase:postgrest-kt")
     // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
