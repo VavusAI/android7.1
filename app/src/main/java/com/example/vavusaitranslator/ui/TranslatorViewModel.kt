@@ -1,10 +1,10 @@
-package com.example.madladtranslator.ui
+package com.example.vavusaitranslator.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.madladtranslator.data.MadladRepository
-import com.example.madladtranslator.data.SessionManager
-import com.example.madladtranslator.model.MadladLanguage
+import com.example.vavusaitranslator.data.VavusRepository
+import com.example.vavusaitranslator.data.SessionManager
+import com.example.vavusaitranslator.model.VavusLanguage
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class TranslatorViewModel(
-    private val repository: MadladRepository,
+    private val repository: VavusRepository,
     private val session: SessionManager
 ) : ViewModel() {
 
@@ -72,7 +72,7 @@ class TranslatorViewModel(
                                 languages = fallback,
                                 sourceLanguage = source,
                                 targetLanguage = target,
-                                error = "Using offline MADLAD catalog: ${error.localizedMessage ?: "network unavailable"}"
+                                error = "Using offline Vavus catalog: ${error.localizedMessage ?: "network unavailable"}"
                             )
                         } else {
                             state.copy(isLoading = false, error = error.localizedMessage)
@@ -83,11 +83,11 @@ class TranslatorViewModel(
         }
     }
 
-    fun updateSourceLanguage(language: MadladLanguage) {
+    fun updateSourceLanguage(language: VavusLanguage) {
         _uiState.update { it.copy(sourceLanguage = language) }
     }
 
-    fun updateTargetLanguage(language: MadladLanguage) {
+    fun updateTargetLanguage(language: VavusLanguage) {
         _uiState.update { it.copy(targetLanguage = language) }
     }
 
@@ -145,9 +145,9 @@ class TranslatorViewModel(
 
 data class TranslatorUiState(
     val username: String = "",
-    val languages: List<MadladLanguage> = emptyList(),
-    val sourceLanguage: MadladLanguage? = null,
-    val targetLanguage: MadladLanguage? = null,
+    val languages: List<VavusLanguage> = emptyList(),
+    val sourceLanguage: VavusLanguage? = null,
+    val targetLanguage: VavusLanguage? = null,
     val textToTranslate: String = "",
     val translatedText: String = "",
     val isLoading: Boolean = false,

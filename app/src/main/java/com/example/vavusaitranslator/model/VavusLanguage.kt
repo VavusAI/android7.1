@@ -1,6 +1,6 @@
-package com.example.madladtranslator.model
+package com.example.vavusaitranslator.model
 
-data class MadladLanguage(
+data class VavusLanguage(
     val code: String,
     val name: String,
     val script: String? = null

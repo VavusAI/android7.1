@@ -1,4 +1,4 @@
-package com.example.madladtranslator.network
+package com.example.vavusaitranslator.network
 
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
@@ -7,10 +7,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
-class MadladServiceFactory {
+class VavusServiceFactory {
     private val moshi: Moshi = Moshi.Builder().build()
 
-    fun create(baseUrl: String): MadladApi {
+    fun create(baseUrl: String): VavusApi {
         val withScheme = if (baseUrl.startsWith("http://") || baseUrl.startsWith("https://")) {
             baseUrl
         } else {
@@ -33,6 +33,6 @@ class MadladServiceFactory {
             .client(client)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
-            .create(MadladApi::class.java)
+            .create(VavusApi::class.java)
     }
 }

@@ -1,12 +1,12 @@
-package com.example.madladtranslator
+package com.example.vavusaitranslator
 
 import android.app.Application
-import com.example.madladtranslator.data.LocalLanguageCatalog
-import com.example.madladtranslator.data.MadladRepository
-import com.example.madladtranslator.data.SessionManager
-import com.example.madladtranslator.network.MadladServiceFactory
+import com.example.vavusaitranslator.data.LocalLanguageCatalog
+import com.example.vavusaitranslator.data.VavusRepository
+import com.example.vavusaitranslator.data.SessionManager
+import com.example.vavusaitranslator.network.VavusServiceFactory
 
-class MadladApp : Application() {
+class VavusApp : Application() {
     lateinit var container: AppContainer
         private set
 
@@ -18,10 +18,10 @@ class MadladApp : Application() {
 
 class AppContainer(application: Application) {
     private val sessionManager = SessionManager(application)
-    private val serviceFactory = MadladServiceFactory()
+    private val serviceFactory = VavusServiceFactory()
     private val languageCatalog = LocalLanguageCatalog(application)
 
-    val repository: MadladRepository = MadladRepository(
+    val repository: VavusRepository = VavusRepository(
         sessionManager = sessionManager,
         serviceFactory = serviceFactory,
         languageCatalog = languageCatalog

@@ -1,4 +1,4 @@
-package com.example.madladtranslator
+package com.example.vavusaitranslator
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -26,13 +26,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.madladtranslator.ui.AppViewModelFactory
-import com.example.madladtranslator.ui.AuthViewModel
-import com.example.madladtranslator.ui.TranslatorViewModel
-import com.example.madladtranslator.ui.screens.CreateAccountScreen
-import com.example.madladtranslator.ui.screens.LoginScreen
-import com.example.madladtranslator.ui.screens.TranslatorScreen
-import com.example.madladtranslator.ui.theme.MadladTranslatorTheme
+import com.example.vavusaitranslator.ui.AppViewModelFactory
+import com.example.vavusaitranslator.ui.AuthViewModel
+import com.example.vavusaitranslator.ui.TranslatorViewModel
+import com.example.vavusaitranslator.ui.screens.CreateAccountScreen
+import com.example.vavusaitranslator.ui.screens.LoginScreen
+import com.example.vavusaitranslator.ui.screens.TranslatorScreen
+import com.example.vavusaitranslator.ui.theme.VavusTranslatorTheme
 import kotlinx.coroutines.launch
 
 private const val ROUTE_LOGIN = "login"
@@ -43,11 +43,11 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val appContainer = (application as MadladApp).container
+        val appContainer = (application as VavusApp).container
         val viewModelFactory = AppViewModelFactory(appContainer.repository, appContainer.session)
 
         setContent {
-            MadladTranslatorTheme {
+            VavusTranslatorTheme {
                 val navController = rememberNavController()
                 val snackbarHostState = remember { SnackbarHostState() }
                 val coroutineScope = rememberCoroutineScope()

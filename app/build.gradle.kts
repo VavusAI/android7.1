@@ -2,19 +2,41 @@ plugins {
     id("com.android.application") version "8.2.2"
     id("org.jetbrains.kotlin.android") version "1.9.22"
 }
+fun String.escapeForBuildConfig(): String =
+    this.replace("\\", "\\\\").replace("\"", "\\\"")
+
+val translatorApiBaseUrl =
+    (project.findProperty("VAVUS_TRANSLATOR_API_BASE_URL") as? String)?.trim().orEmpty()
+val supabaseUrl = (project.findProperty("VAVUS_SUPABASE_URL") as? String)?.trim().orEmpty()
+val supabaseAnonKey =
+    (project.findProperty("VAVUS_SUPABASE_ANON_KEY") as? String)?.trim().orEmpty()
 
 android {
-    namespace = "com.example.madladtranslator"
+    namespace = "com.example.vavusaitranslator"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.madladtranslator"
+        applicationId = "com.example.vavusaitranslator"
         minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-    }
-
+    buildConfigField(
+        "String",
+        "TRANSLATOR_API_BASE_URL",
+        "\"${translatorApiBaseUrl.escapeForBuildConfig()}\""
+    )
+    buildConfigField(
+        "String",
+        "SUPABASE_URL",
+        "\"${supabaseUrl.escapeForBuildConfig()}\""
+    )
+    buildConfigField(
+        "String",
+        "SUPABASE_ANON_KEY",
+        "\"${supabaseAnonKey.escapeForBuildConfig()}\""
+    )
+}
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -25,7 +47,10 @@ android {
         }
     }
 
-    buildFeatures { compose = true }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
     composeOptions { kotlinCompilerExtensionVersion = "1.5.10" }
 
     compileOptions {

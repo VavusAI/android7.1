@@ -1,4 +1,4 @@
-package com.example.madladtranslator.data
+package com.example.vavusaitranslator.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -9,7 +9,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-private const val DATA_STORE_NAME = "madlad_session"
+private const val DATA_STORE_NAME = "vavus_session"
 
 val Context.sessionDataStore: DataStore<Preferences> by preferencesDataStore(name = DATA_STORE_NAME)
 

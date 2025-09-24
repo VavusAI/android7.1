@@ -1,6 +1,6 @@
 <resources>
     <!-- XML theme for your app process (used by the system before Compose runs) -->
-    <style name="Theme.MadladTranslator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.VavusTranslator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Optional: add your colors here if you want -->
         <!-- <item name="colorPrimary">@android:color/holo_blue_dark</item> -->
     </style>

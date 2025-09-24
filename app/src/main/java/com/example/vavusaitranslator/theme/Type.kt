@@ -1,4 +1,4 @@
-package com.example.madladtranslator.theme
+package com.example.vavusaitranslator.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

@@ -1,12 +1,12 @@
-package com.example.madladtranslator.ui
+package com.example.vavusaitranslator.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.madladtranslator.data.MadladRepository
-import com.example.madladtranslator.data.SessionManager
+import com.example.vavusaitranslator.data.VavusRepository
+import com.example.vavusaitranslator.data.SessionManager
 
 class AppViewModelFactory(
-    private val repository: MadladRepository,
+    private val repository: VavusRepository,
     private val session: SessionManager
 ) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")

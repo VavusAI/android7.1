@@ -1,4 +1,4 @@
-package com.example.madladtranslator.ui.screens
+package com.example.vavusaitranslator.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -36,16 +36,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import com.example.madladtranslator.model.MadladLanguage
-import com.example.madladtranslator.ui.TranslatorUiState
+import com.example.vavusaitranslator.model.VavusLanguage
+import com.example.vavusaitranslator.ui.TranslatorUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TranslatorScreen(
     uiState: TranslatorUiState,
     onRefreshLanguages: () -> Unit,
-    onSourceLanguageSelected: (MadladLanguage) -> Unit,
-    onTargetLanguageSelected: (MadladLanguage) -> Unit,
+    onSourceLanguageSelected: (VavusLanguage) -> Unit,
+    onTargetLanguageSelected: (VavusLanguage) -> Unit,
     onSwapLanguages: () -> Unit,
     onTextChanged: (String) -> Unit,
     onTranslate: () -> Unit,
@@ -64,7 +64,7 @@ fun TranslatorScreen(
             style = MaterialTheme.typography.titleLarge
         )
         Text(
-            text = "Translate effortlessly across the full MADLAD-400 language inventory.",
+            text = "Translate effortlessly across the full 419 Vavus language inventory.",
             style = MaterialTheme.typography.bodyMedium
         )
         if (uiState.error != null) {
@@ -146,9 +146,9 @@ fun TranslatorScreen(
 @Composable
 private fun LanguageDropdown(
     label: String,
-    languages: List<MadladLanguage>,
-    selected: MadladLanguage?,
-    onSelected: (MadladLanguage) -> Unit,
+    languages: List<VavusLanguage>,
+    selected: VavusLanguage?,
+    onSelected: (VavusLanguage) -> Unit,
     enabled: Boolean
 ) {
     var expanded by remember { mutableStateOf(false) }

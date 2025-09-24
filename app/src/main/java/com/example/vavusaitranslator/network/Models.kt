@@ -1,4 +1,4 @@
-package com.example.madladtranslator.network
+package com.example.vavusaitranslator.network
 
 data class LoginRequest(
     val username: String,

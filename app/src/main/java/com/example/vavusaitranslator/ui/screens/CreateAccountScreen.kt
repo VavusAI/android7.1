@@ -1,4 +1,4 @@
-package com.example.madladtranslator.ui.screens
+package com.example.vavusaitranslator.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -25,7 +25,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.madladtranslator.ui.AuthUiState
+import com.example.vavusaitranslator.ui.AuthUiState
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -52,7 +52,7 @@ fun CreateAccountScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Create MADLAD Account",
+            text = "Create Vavus Account",
             style = MaterialTheme.typography.headlineSmall
         )
         Spacer(modifier = Modifier.height(24.dp))
@@ -89,7 +89,7 @@ fun CreateAccountScreen(
             onValueChange = onOrderNumberChanged,
             label = { Text("Order Number") },
             singleLine = true,
-            supportingText = { Text("Enter the purchase or provisioning order associated with your MADLAD instance.") },
+            supportingText = { Text("Enter the purchase or provisioning order associated with your Vavus instance.") },
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Done),
             keyboardActions = KeyboardActions(onDone = {
                 focusManager.clearFocus(force = true)

@@ -1,12 +1,12 @@
-package com.example.madladtranslator.network
+package com.example.vavusaitranslator.network
 
-import com.example.madladtranslator.model.MadladLanguage
+import com.example.vavusaitranslator.model.VavusLanguage
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 
-interface MadladApi {
+interface VavusApi {
     @POST("auth/login")
     suspend fun login(@Body request: LoginRequest): LoginResponse
 
@@ -14,7 +14,7 @@ interface MadladApi {
     suspend fun register(@Body request: RegisterRequest): RegisterResponse
 
     @GET("languages")
-    suspend fun languages(): List<MadladLanguage>
+    suspend fun languages(): List<VavusLanguage>
 
     @POST("translate")
     suspend fun translate(

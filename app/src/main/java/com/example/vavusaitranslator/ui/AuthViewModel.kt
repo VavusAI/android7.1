@@ -1,9 +1,9 @@
-package com.example.madladtranslator.ui
+package com.example.vavusaitranslator.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.madladtranslator.data.MadladRepository
-import com.example.madladtranslator.data.SessionManager
+import com.example.vavusaitranslator.data.VavusRepository
+import com.example.vavusaitranslator.data.SessionManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class AuthViewModel(
-    private val repository: MadladRepository,
+    private val repository: VavusRepository,
     private val session: SessionManager
 ) : ViewModel() {
 

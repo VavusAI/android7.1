@@ -1,11 +1,11 @@
-package com.example.madladtranslator.data
+package com.example.vavusaitranslator.data
 
-import com.example.madladtranslator.model.MadladLanguage
-import com.example.madladtranslator.network.LoginRequest
-import com.example.madladtranslator.network.MadladApi
-import com.example.madladtranslator.network.MadladServiceFactory
-import com.example.madladtranslator.network.RegisterRequest
-import com.example.madladtranslator.network.TranslateRequest
+import com.example.vavusaitranslator.model.VavusLanguage
+import com.example.vavusaitranslator.network.LoginRequest
+import com.example.vavusaitranslator.network.VavusApi
+import com.example.vavusaitranslator.network.VavusServiceFactory
+import com.example.vavusaitranslator.network.RegisterRequest
+import com.example.vavusaitranslator.network.TranslateRequest
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -14,13 +14,13 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
 
-class MadladRepository(
+class VavusRepository(
     private val sessionManager: SessionManager,
-    private val serviceFactory: MadladServiceFactory,
+    private val serviceFactory: VavusServiceFactory,
     private val languageCatalog: LocalLanguageCatalog,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) {
-    private val apiState: MutableStateFlow<MadladApi?> = MutableStateFlow(null)
+    private val apiState: MutableStateFlow<VavusApi?> = MutableStateFlow(null)
 
     val activeBaseUrl: Flow<String?> = sessionManager.baseUrl
 
@@ -29,7 +29,7 @@ class MadladRepository(
         apiState.update { serviceFactory.create(baseUrl) }
     }
 
-    private suspend fun ensureApi(baseUrl: String? = null): MadladApi {
+    private suspend fun ensureApi(baseUrl: String? = null): VavusApi {
         val cached = apiState.value
         val resolvedBaseUrl = baseUrl ?: sessionManager.baseUrl.first()
         if (cached != null && baseUrl == null) {
@@ -71,14 +71,14 @@ class MadladRepository(
         }
     }
 
-    suspend fun fetchLanguages(): Result<List<MadladLanguage>> = runCatching {
+    suspend fun fetchLanguages(): Result<List<VavusLanguage>> = runCatching {
         withContext(ioDispatcher) {
             val api = ensureApi()
             api.languages().sortedBy { it.name }
         }
     }
 
-    fun fallbackLanguages(): List<MadladLanguage> = languageCatalog.getAll()
+    fun fallbackLanguages(): List<VavusLanguage> = languageCatalog.getAll()
 
     suspend fun translate(
         sourceLanguage: String,

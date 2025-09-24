@@ -1,8 +1,8 @@
-package com.example.madladtranslator.data
+package com.example.vavusaitranslator.data
 
 import android.content.Context
-import com.example.madladtranslator.R
-import com.example.madladtranslator.model.MadladLanguage
+import com.example.vavusaitranslator.R
+import com.example.vavusaitranslator.model.VavusLanguage
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -13,16 +13,16 @@ class LocalLanguageCatalog(context: Context) {
     private val moshi: Moshi = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())
         .build()
-    private val languages: List<MadladLanguage>
+    private val languages: List<VavusLanguage>
 
     init {
-        val type = Types.newParameterizedType(List::class.java, MadladLanguage::class.java)
-        val adapter: JsonAdapter<List<MadladLanguage>> = moshi.adapter(type)
-        val rawLanguages = context.resources.openRawResource(R.raw.madlad_languages)
+        val type = Types.newParameterizedType(List::class.java, VavusLanguage::class.java)
+        val adapter: JsonAdapter<List<VavusLanguage>> = moshi.adapter(type)
+        val rawLanguages = context.resources.openRawResource(R.raw.vavus_languages)
             .bufferedReader()
             .use(BufferedReader::readText)
         languages = adapter.fromJson(rawLanguages).orEmpty().sortedBy { it.name }
     }
 
-    fun getAll(): List<MadladLanguage> = languages
+    fun getAll(): List<VavusLanguage> = languages
 }
