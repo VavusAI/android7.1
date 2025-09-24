@@ -1,0 +1,2002 @@
+[
+  {
+    "code": "alu",
+    "name": "'Are'are",
+    "script": "I"
+  },
+  {
+    "code": "kud",
+    "name": "'Auhelawa",
+    "script": "I"
+  },
+  {
+    "code": "aou",
+    "name": "A'ou",
+    "script": "I"
+  },
+  {
+    "code": "apq",
+    "name": "A-Pucikwar",
+    "script": "I"
+  },
+  {
+    "code": "aiw",
+    "name": "Aari",
+    "script": "I"
+  },
+  {
+    "code": "aas",
+    "name": "Aasáx",
+    "script": "I"
+  },
+  {
+    "code": "kbt",
+    "name": "Abadi",
+    "script": "I"
+  },
+  {
+    "code": "abg",
+    "name": "Abaga",
+    "script": "I"
+  },
+  {
+    "code": "abf",
+    "name": "Abai Sungai",
+    "script": "I"
+  },
+  {
+    "code": "abm",
+    "name": "Abanyom",
+    "script": "I"
+  },
+  {
+    "code": "mij",
+    "name": "Abar",
+    "script": "I"
+  },
+  {
+    "code": "aau",
+    "name": "Abau",
+    "script": "I"
+  },
+  {
+    "code": "abq",
+    "name": "Abaza",
+    "script": "I"
+  },
+  {
+    "code": "abp",
+    "name": "Abellen Ayta",
+    "script": "I"
+  },
+  {
+    "code": "abi",
+    "name": "Abidji",
+    "script": "I"
+  },
+  {
+    "code": "bsa",
+    "name": "Abinomn",
+    "script": "I"
+  },
+  {
+    "code": "axb",
+    "name": "Abipon",
+    "script": "I"
+  },
+  {
+    "code": "ash",
+    "name": "Abishira",
+    "script": "I"
+  },
+  {
+    "code": "abk",
+    "name": "Abkhazian",
+    "script": "I"
+  },
+  {
+    "code": "aob",
+    "name": "Abom",
+    "script": "I"
+  },
+  {
+    "code": "abo",
+    "name": "Abon",
+    "script": "I"
+  },
+  {
+    "code": "abr",
+    "name": "Abron",
+    "script": "I"
+  },
+  {
+    "code": "ado",
+    "name": "Abu",
+    "script": "I"
+  },
+  {
+    "code": "aah",
+    "name": "Abu' Arapesh",
+    "script": "I"
+  },
+  {
+    "code": "abn",
+    "name": "Abua",
+    "script": "I"
+  },
+  {
+    "code": "abz",
+    "name": "Abui",
+    "script": "I"
+  },
+  {
+    "code": "kgr",
+    "name": "Abun",
+    "script": "I"
+  },
+  {
+    "code": "abu",
+    "name": "Abure",
+    "script": "I"
+  },
+  {
+    "code": "mgj",
+    "name": "Abureni",
+    "script": "I"
+  },
+  {
+    "code": "aba",
+    "name": "Abé",
+    "script": "I"
+  },
+  {
+    "code": "tpx",
+    "name": "Acatepec Me'phaa",
+    "script": "I"
+  },
+  {
+    "code": "aca",
+    "name": "Achagua",
+    "script": "I"
+  },
+  {
+    "code": "acn",
+    "name": "Achang",
+    "script": "I"
+  },
+  {
+    "code": "yif",
+    "name": "Ache",
+    "script": "I"
+  },
+  {
+    "code": "acz",
+    "name": "Acheron",
+    "script": "I"
+  },
+  {
+    "code": "acr",
+    "name": "Achi",
+    "script": "I"
+  },
+  {
+    "code": "ace",
+    "name": "Achinese",
+    "script": "I"
+  },
+  {
+    "code": "act",
+    "name": "Achterhoeks",
+    "script": "I"
+  },
+  {
+    "code": "acu",
+    "name": "Achuar-Shiwiar",
+    "script": "I"
+  },
+  {
+    "code": "acv",
+    "name": "Achumawi",
+    "script": "I"
+  },
+  {
+    "code": "guq",
+    "name": "Aché",
+    "script": "I"
+  },
+  {
+    "code": "ach",
+    "name": "Acoli",
+    "script": "I"
+  },
+  {
+    "code": "acs",
+    "name": "Acroá",
+    "script": "I"
+  },
+  {
+    "code": "xad",
+    "name": "Adai",
+    "script": "I"
+  },
+  {
+    "code": "fub",
+    "name": "Adamawa Fulfulde",
+    "script": "I"
+  },
+  {
+    "code": "ads",
+    "name": "Adamorobe Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "adn",
+    "name": "Adang",
+    "script": "I"
+  },
+  {
+    "code": "adq",
+    "name": "Adangbe",
+    "script": "I"
+  },
+  {
+    "code": "ada",
+    "name": "Adangme",
+    "script": "I"
+  },
+  {
+    "code": "kad",
+    "name": "Adara",
+    "script": "I"
+  },
+  {
+    "code": "tiu",
+    "name": "Adasen",
+    "script": "I"
+  },
+  {
+    "code": "ade",
+    "name": "Adele",
+    "script": "I"
+  },
+  {
+    "code": "adh",
+    "name": "Adhola",
+    "script": "I"
+  },
+  {
+    "code": "adi",
+    "name": "Adi",
+    "script": "I"
+  },
+  {
+    "code": "wsg",
+    "name": "Adilabad Gondi",
+    "script": "I"
+  },
+  {
+    "code": "adj",
+    "name": "Adioukrou",
+    "script": "I"
+  },
+  {
+    "code": "dth",
+    "name": "Adithinngithigh",
+    "script": "I"
+  },
+  {
+    "code": "ort",
+    "name": "Adivasi Oriya",
+    "script": "I"
+  },
+  {
+    "code": "gas",
+    "name": "Adiwasi Garasia",
+    "script": "I"
+  },
+  {
+    "code": "adt",
+    "name": "Adnyamathanha",
+    "script": "I"
+  },
+  {
+    "code": "adr",
+    "name": "Adonara",
+    "script": "I"
+  },
+  {
+    "code": "adu",
+    "name": "Aduge",
+    "script": "I"
+  },
+  {
+    "code": "ady",
+    "name": "Adyghe",
+    "script": "I"
+  },
+  {
+    "code": "adz",
+    "name": "Adzera",
+    "script": "I"
+  },
+  {
+    "code": "aez",
+    "name": "Aeka",
+    "script": "I"
+  },
+  {
+    "code": "awi",
+    "name": "Aekyom",
+    "script": "I"
+  },
+  {
+    "code": "xae",
+    "name": "Aequian",
+    "script": "I"
+  },
+  {
+    "code": "aeq",
+    "name": "Aer",
+    "script": "I"
+  },
+  {
+    "code": "aal",
+    "name": "Afade",
+    "script": "I"
+  },
+  {
+    "code": "aar",
+    "name": "Afar",
+    "script": "I"
+  },
+  {
+    "code": "afg",
+    "name": "Afghan Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "aft",
+    "name": "Afitti",
+    "script": "I"
+  },
+  {
+    "code": "afh",
+    "name": "Afrihili",
+    "script": "I"
+  },
+  {
+    "code": "afr",
+    "name": "Afrikaans",
+    "script": "I"
+  },
+  {
+    "code": "afs",
+    "name": "Afro-Seminole Creole",
+    "script": "I"
+  },
+  {
+    "code": "agd",
+    "name": "Agarabi",
+    "script": "I"
+  },
+  {
+    "code": "agi",
+    "name": "Agariya",
+    "script": "I"
+  },
+  {
+    "code": "agc",
+    "name": "Agatu",
+    "script": "I"
+  },
+  {
+    "code": "avo",
+    "name": "Agavotaguerra",
+    "script": "I"
+  },
+  {
+    "code": "agq",
+    "name": "Aghem",
+    "script": "I"
+  },
+  {
+    "code": "ahh",
+    "name": "Aghu",
+    "script": "I"
+  },
+  {
+    "code": "gtu",
+    "name": "Aghu-Tharnggala",
+    "script": "I"
+  },
+  {
+    "code": "agx",
+    "name": "Aghul",
+    "script": "I"
+  },
+  {
+    "code": "xag",
+    "name": "Aghwan",
+    "script": "I"
+  },
+  {
+    "code": "aif",
+    "name": "Agi",
+    "script": "I"
+  },
+  {
+    "code": "kit",
+    "name": "Agob",
+    "script": "I"
+  },
+  {
+    "code": "ibm",
+    "name": "Agoi",
+    "script": "I"
+  },
+  {
+    "code": "agu",
+    "name": "Aguacateco",
+    "script": "I"
+  },
+  {
+    "code": "aga",
+    "name": "Aguano",
+    "script": "I"
+  },
+  {
+    "code": "agr",
+    "name": "Aguaruna",
+    "script": "I"
+  },
+  {
+    "code": "aug",
+    "name": "Aguna",
+    "script": "I"
+  },
+  {
+    "code": "msm",
+    "name": "Agusan Manobo",
+    "script": "I"
+  },
+  {
+    "code": "agn",
+    "name": "Agutaynen",
+    "script": "I"
+  },
+  {
+    "code": "yay",
+    "name": "Agwagwune",
+    "script": "I"
+  },
+  {
+    "code": "aha",
+    "name": "Ahanta",
+    "script": "I"
+  },
+  {
+    "code": "esg",
+    "name": "Aheri Gondi",
+    "script": "I"
+  },
+  {
+    "code": "thm",
+    "name": "Aheu",
+    "script": "I"
+  },
+  {
+    "code": "ahr",
+    "name": "Ahirani",
+    "script": "I"
+  },
+  {
+    "code": "aho",
+    "name": "Ahom",
+    "script": "I"
+  },
+  {
+    "code": "aht",
+    "name": "Ahtena",
+    "script": "I"
+  },
+  {
+    "code": "nfd",
+    "name": "Ahwai",
+    "script": "I"
+  },
+  {
+    "code": "aih",
+    "name": "Ai-Cham",
+    "script": "I"
+  },
+  {
+    "code": "aix",
+    "name": "Aighon",
+    "script": "I"
+  },
+  {
+    "code": "tba",
+    "name": "Aikanã",
+    "script": "I"
+  },
+  {
+    "code": "mwg",
+    "name": "Aiklep",
+    "script": "I"
+  },
+  {
+    "code": "aiq",
+    "name": "Aimaq",
+    "script": "I"
+  },
+  {
+    "code": "ail",
+    "name": "Aimele",
+    "script": "I"
+  },
+  {
+    "code": "aim",
+    "name": "Aimol",
+    "script": "I"
+  },
+  {
+    "code": "aic",
+    "name": "Ainbai",
+    "script": "I"
+  },
+  {
+    "code": "aib",
+    "name": "Ainu (China)",
+    "script": "I"
+  },
+  {
+    "code": "ain",
+    "name": "Ainu (Japan)",
+    "script": "I"
+  },
+  {
+    "code": "aki",
+    "name": "Aiome",
+    "script": "I"
+  },
+  {
+    "code": "air",
+    "name": "Airoran",
+    "script": "I"
+  },
+  {
+    "code": "aio",
+    "name": "Aiton",
+    "script": "I"
+  },
+  {
+    "code": "ajg",
+    "name": "Aja (Benin)",
+    "script": "I"
+  },
+  {
+    "code": "aja",
+    "name": "Aja (South Sudan)",
+    "script": "I"
+  },
+  {
+    "code": "ajw",
+    "name": "Ajawa",
+    "script": "I"
+  },
+  {
+    "code": "aji",
+    "name": "Ajië",
+    "script": "I"
+  },
+  {
+    "code": "muc",
+    "name": "Ajumbu",
+    "script": "I"
+  },
+  {
+    "code": "cpc",
+    "name": "Ajyíninka Apurucayali",
+    "script": "I"
+  },
+  {
+    "code": "akq",
+    "name": "Ak",
+    "script": "I"
+  },
+  {
+    "code": "soh",
+    "name": "Aka",
+    "script": "I"
+  },
+  {
+    "code": "abj",
+    "name": "Aka-Bea",
+    "script": "I"
+  },
+  {
+    "code": "akm",
+    "name": "Aka-Bo",
+    "script": "I"
+  },
+  {
+    "code": "aci",
+    "name": "Aka-Cari",
+    "script": "I"
+  },
+  {
+    "code": "akj",
+    "name": "Aka-Jeru",
+    "script": "I"
+  },
+  {
+    "code": "akx",
+    "name": "Aka-Kede",
+    "script": "I"
+  },
+  {
+    "code": "aky",
+    "name": "Aka-Kol",
+    "script": "I"
+  },
+  {
+    "code": "ack",
+    "name": "Aka-Kora",
+    "script": "I"
+  },
+  {
+    "code": "aka",
+    "name": "Akan",
+    "script": "M"
+  },
+  {
+    "code": "acl",
+    "name": "Akar-Bale",
+    "script": "I"
+  },
+  {
+    "code": "aks",
+    "name": "Akaselem",
+    "script": "I"
+  },
+  {
+    "code": "ake",
+    "name": "Akawaio",
+    "script": "I"
+  },
+  {
+    "code": "aik",
+    "name": "Ake",
+    "script": "I"
+  },
+  {
+    "code": "keu",
+    "name": "Akebu",
+    "script": "I"
+  },
+  {
+    "code": "tsr",
+    "name": "Akei",
+    "script": "I"
+  },
+  {
+    "code": "aeu",
+    "name": "Akeu",
+    "script": "I"
+  },
+  {
+    "code": "ahk",
+    "name": "Akha",
+    "script": "I"
+  },
+  {
+    "code": "akv",
+    "name": "Akhvakh",
+    "script": "I"
+  },
+  {
+    "code": "akk",
+    "name": "Akkadian",
+    "script": "I"
+  },
+  {
+    "code": "sia",
+    "name": "Akkala Sami",
+    "script": "I"
+  },
+  {
+    "code": "akl",
+    "name": "Aklanon",
+    "script": "I"
+  },
+  {
+    "code": "akt",
+    "name": "Akolet",
+    "script": "I"
+  },
+  {
+    "code": "bss",
+    "name": "Akoose",
+    "script": "I"
+  },
+  {
+    "code": "miw",
+    "name": "Akoye",
+    "script": "I"
+  },
+  {
+    "code": "akf",
+    "name": "Akpa",
+    "script": "I"
+  },
+  {
+    "code": "ibe",
+    "name": "Akpes",
+    "script": "I"
+  },
+  {
+    "code": "afi",
+    "name": "Akrukay",
+    "script": "I"
+  },
+  {
+    "code": "spm",
+    "name": "Akukem",
+    "script": "I"
+  },
+  {
+    "code": "ayk",
+    "name": "Akuku",
+    "script": "I"
+  },
+  {
+    "code": "aku",
+    "name": "Akum",
+    "script": "I"
+  },
+  {
+    "code": "aqz",
+    "name": "Akuntsu",
+    "script": "I"
+  },
+  {
+    "code": "ako",
+    "name": "Akurio",
+    "script": "I"
+  },
+  {
+    "code": "akw",
+    "name": "Akwa",
+    "script": "I"
+  },
+  {
+    "code": "nqy",
+    "name": "Akyaung Ari Naga",
+    "script": "I"
+  },
+  {
+    "code": "syy",
+    "name": "Al-Sayyid Bedouin Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "alw",
+    "name": "Alaba-K’abeena",
+    "script": "I"
+  },
+  {
+    "code": "akz",
+    "name": "Alabama",
+    "script": "I"
+  },
+  {
+    "code": "dul",
+    "name": "Alabat Island Agta",
+    "script": "I"
+  },
+  {
+    "code": "mim",
+    "name": "Alacatlatzala Mixtec",
+    "script": "I"
+  },
+  {
+    "code": "ala",
+    "name": "Alago",
+    "script": "I"
+  },
+  {
+    "code": "wbj",
+    "name": "Alagwa",
+    "script": "I"
+  },
+  {
+    "code": "alk",
+    "name": "Alak",
+    "script": "I"
+  },
+  {
+    "code": "amp",
+    "name": "Alamblak",
+    "script": "I"
+  },
+  {
+    "code": "alj",
+    "name": "Alangan",
+    "script": "I"
+  },
+  {
+    "code": "xln",
+    "name": "Alanic",
+    "script": "I"
+  },
+  {
+    "code": "apv",
+    "name": "Alapmunte",
+    "script": "I"
+  },
+  {
+    "code": "alh",
+    "name": "Alawa",
+    "script": "I"
+  },
+  {
+    "code": "sqi",
+    "name": "Albanian",
+    "script": "M"
+  },
+  {
+    "code": "sqk",
+    "name": "Albanian Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "lsc",
+    "name": "Albarradas Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "xta",
+    "name": "Alcozauca Mixtec",
+    "script": "I"
+  },
+  {
+    "code": "alf",
+    "name": "Alege",
+    "script": "I"
+  },
+  {
+    "code": "gah",
+    "name": "Alekano",
+    "script": "I"
+  },
+  {
+    "code": "ale",
+    "name": "Aleut",
+    "script": "I"
+  },
+  {
+    "code": "arq",
+    "name": "Algerian Arabic",
+    "script": "I"
+  },
+  {
+    "code": "ajs",
+    "name": "Algerian Jewish Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "aao",
+    "name": "Algerian Saharan Arabic",
+    "script": "I"
+  },
+  {
+    "code": "asp",
+    "name": "Algerian Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "alq",
+    "name": "Algonquin",
+    "script": "I"
+  },
+  {
+    "code": "aiy",
+    "name": "Ali",
+    "script": "I"
+  },
+  {
+    "code": "ald",
+    "name": "Alladian",
+    "script": "I"
+  },
+  {
+    "code": "all",
+    "name": "Allar",
+    "script": "I"
+  },
+  {
+    "code": "aid",
+    "name": "Alngith",
+    "script": "I"
+  },
+  {
+    "code": "ypo",
+    "name": "Alo Phola",
+    "script": "I"
+  },
+  {
+    "code": "aol",
+    "name": "Alor",
+    "script": "I"
+  },
+  {
+    "code": "zaq",
+    "name": "Aloápam Zapotec",
+    "script": "I"
+  },
+  {
+    "code": "aes",
+    "name": "Alsea",
+    "script": "I"
+  },
+  {
+    "code": "xua",
+    "name": "Alu Kurumba",
+    "script": "I"
+  },
+  {
+    "code": "aub",
+    "name": "Alugu",
+    "script": "I"
+  },
+  {
+    "code": "aab",
+    "name": "Alumu-Tesu",
+    "script": "I"
+  },
+  {
+    "code": "alp",
+    "name": "Alune",
+    "script": "I"
+  },
+  {
+    "code": "yna",
+    "name": "Aluo",
+    "script": "I"
+  },
+  {
+    "code": "alz",
+    "name": "Alur",
+    "script": "I"
+  },
+  {
+    "code": "alr",
+    "name": "Alutor",
+    "script": "I"
+  },
+  {
+    "code": "avd",
+    "name": "Alviri-Vidari",
+    "script": "I"
+  },
+  {
+    "code": "aly",
+    "name": "Alyawarr",
+    "script": "I"
+  },
+  {
+    "code": "amm",
+    "name": "Ama (Papua New Guinea)",
+    "script": "I"
+  },
+  {
+    "code": "nyi",
+    "name": "Ama (Sudan)",
+    "script": "I"
+  },
+  {
+    "code": "amq",
+    "name": "Amahai",
+    "script": "I"
+  },
+  {
+    "code": "amc",
+    "name": "Amahuaca",
+    "script": "I"
+  },
+  {
+    "code": "ali",
+    "name": "Amaimon",
+    "script": "I"
+  },
+  {
+    "code": "aad",
+    "name": "Amal",
+    "script": "I"
+  },
+  {
+    "code": "jks",
+    "name": "Amami Koniya Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "amn",
+    "name": "Amanab",
+    "script": "I"
+  },
+  {
+    "code": "ama",
+    "name": "Amanayé",
+    "script": "I"
+  },
+  {
+    "code": "aie",
+    "name": "Amara",
+    "script": "I"
+  },
+  {
+    "code": "amr",
+    "name": "Amarakaeri",
+    "script": "I"
+  },
+  {
+    "code": "aaz",
+    "name": "Amarasi",
+    "script": "I"
+  },
+  {
+    "code": "zpo",
+    "name": "Amatlán Zapotec",
+    "script": "I"
+  },
+  {
+    "code": "utp",
+    "name": "Amba (Solomon Islands)",
+    "script": "I"
+  },
+  {
+    "code": "rwm",
+    "name": "Amba (Uganda)",
+    "script": "I"
+  },
+  {
+    "code": "amk",
+    "name": "Ambai",
+    "script": "I"
+  },
+  {
+    "code": "aew",
+    "name": "Ambakich",
+    "script": "I"
+  },
+  {
+    "code": "abc",
+    "name": "Ambala Ayta",
+    "script": "I"
+  },
+  {
+    "code": "amv",
+    "name": "Ambelau",
+    "script": "I"
+  },
+  {
+    "code": "ael",
+    "name": "Ambele",
+    "script": "I"
+  },
+  {
+    "code": "alm",
+    "name": "Amblong",
+    "script": "I"
+  },
+  {
+    "code": "amb",
+    "name": "Ambo",
+    "script": "I"
+  },
+  {
+    "code": "qva",
+    "name": "Ambo-Pasco Quechua",
+    "script": "I"
+  },
+  {
+    "code": "abs",
+    "name": "Ambonese Malay",
+    "script": "I"
+  },
+  {
+    "code": "aag",
+    "name": "Ambrak",
+    "script": "I"
+  },
+  {
+    "code": "apo",
+    "name": "Ambul",
+    "script": "I"
+  },
+  {
+    "code": "abt",
+    "name": "Ambulas",
+    "script": "I"
+  },
+  {
+    "code": "amj",
+    "name": "Amdang",
+    "script": "I"
+  },
+  {
+    "code": "adx",
+    "name": "Amdo Tibetan",
+    "script": "I"
+  },
+  {
+    "code": "aey",
+    "name": "Amele",
+    "script": "I"
+  },
+  {
+    "code": "ase",
+    "name": "American Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "ifa",
+    "name": "Amganad Ifugao",
+    "script": "I"
+  },
+  {
+    "code": "amh",
+    "name": "Amharic",
+    "script": "I"
+  },
+  {
+    "code": "amy",
+    "name": "Ami",
+    "script": "I"
+  },
+  {
+    "code": "ami",
+    "name": "Amis",
+    "script": "I"
+  },
+  {
+    "code": "amo",
+    "name": "Amo",
+    "script": "I"
+  },
+  {
+    "code": "alx",
+    "name": "Amol",
+    "script": "I"
+  },
+  {
+    "code": "mbz",
+    "name": "Amoltepec Mixtec",
+    "script": "I"
+  },
+  {
+    "code": "apg",
+    "name": "Ampanang",
+    "script": "I"
+  },
+  {
+    "code": "aqd",
+    "name": "Ampari Dogon",
+    "script": "I"
+  },
+  {
+    "code": "ajz",
+    "name": "Amri Karbi",
+    "script": "I"
+  },
+  {
+    "code": "amt",
+    "name": "Amto",
+    "script": "I"
+  },
+  {
+    "code": "adw",
+    "name": "Amundava",
+    "script": "I"
+  },
+  {
+    "code": "amg",
+    "name": "Amurdak",
+    "script": "I"
+  },
+  {
+    "code": "dti",
+    "name": "Ana Tinga Dogon",
+    "script": "I"
+  },
+  {
+    "code": "anw",
+    "name": "Anaang",
+    "script": "I"
+  },
+  {
+    "code": "akg",
+    "name": "Anakalangu",
+    "script": "I"
+  },
+  {
+    "code": "anm",
+    "name": "Anal",
+    "script": "I"
+  },
+  {
+    "code": "pda",
+    "name": "Anam",
+    "script": "I"
+  },
+  {
+    "code": "aan",
+    "name": "Anambé",
+    "script": "I"
+  },
+  {
+    "code": "imi",
+    "name": "Anamgura",
+    "script": "I"
+  },
+  {
+    "code": "bpo",
+    "name": "Anasi",
+    "script": "I"
+  },
+  {
+    "code": "grc",
+    "name": "Ancient Greek (to 1453)",
+    "script": "I"
+  },
+  {
+    "code": "hbo",
+    "name": "Ancient Hebrew",
+    "script": "I"
+  },
+  {
+    "code": "xmk",
+    "name": "Ancient Macedonian",
+    "script": "I"
+  },
+  {
+    "code": "xna",
+    "name": "Ancient North Arabian",
+    "script": "I"
+  },
+  {
+    "code": "xzp",
+    "name": "Ancient Zapotec",
+    "script": "I"
+  },
+  {
+    "code": "dgl",
+    "name": "Andaandi",
+    "script": "I"
+  },
+  {
+    "code": "afd",
+    "name": "Andai",
+    "script": "I"
+  },
+  {
+    "code": "ajn",
+    "name": "Andajin",
+    "script": "I"
+  },
+  {
+    "code": "xaa",
+    "name": "Andalusian Arabic",
+    "script": "I"
+  },
+  {
+    "code": "hca",
+    "name": "Andaman Creole Hindi",
+    "script": "I"
+  },
+  {
+    "code": "ana",
+    "name": "Andaqui",
+    "script": "I"
+  },
+  {
+    "code": "aod",
+    "name": "Andarum",
+    "script": "I"
+  },
+  {
+    "code": "adg",
+    "name": "Andegerebinha",
+    "script": "I"
+  },
+  {
+    "code": "anr",
+    "name": "Andh",
+    "script": "I"
+  },
+  {
+    "code": "ani",
+    "name": "Andi",
+    "script": "I"
+  },
+  {
+    "code": "bzb",
+    "name": "Andio",
+    "script": "I"
+  },
+  {
+    "code": "anb",
+    "name": "Andoa",
+    "script": "I"
+  },
+  {
+    "code": "ano",
+    "name": "Andoque",
+    "script": "I"
+  },
+  {
+    "code": "anx",
+    "name": "Andra-Hus",
+    "script": "I"
+  },
+  {
+    "code": "aty",
+    "name": "Aneityum",
+    "script": "I"
+  },
+  {
+    "code": "anz",
+    "name": "Anem",
+    "script": "I"
+  },
+  {
+    "code": "aby",
+    "name": "Aneme Wake",
+    "script": "I"
+  },
+  {
+    "code": "myo",
+    "name": "Anfillo",
+    "script": "I"
+  },
+  {
+    "code": "agm",
+    "name": "Angaataha",
+    "script": "I"
+  },
+  {
+    "code": "aqt",
+    "name": "Angaité",
+    "script": "I"
+  },
+  {
+    "code": "age",
+    "name": "Angal",
+    "script": "I"
+  },
+  {
+    "code": "aoe",
+    "name": "Angal Enen",
+    "script": "I"
+  },
+  {
+    "code": "akh",
+    "name": "Angal Heneng",
+    "script": "I"
+  },
+  {
+    "code": "njm",
+    "name": "Angami Naga",
+    "script": "I"
+  },
+  {
+    "code": "yli",
+    "name": "Angguruk Yali",
+    "script": "I"
+  },
+  {
+    "code": "anp",
+    "name": "Angika",
+    "script": "I"
+  },
+  {
+    "code": "avm",
+    "name": "Angkamuthi",
+    "script": "I"
+  },
+  {
+    "code": "xno",
+    "name": "Anglo-Norman",
+    "script": "I"
+  },
+  {
+    "code": "rme",
+    "name": "Angloromani",
+    "script": "I"
+  },
+  {
+    "code": "aoa",
+    "name": "Angolar",
+    "script": "I"
+  },
+  {
+    "code": "agg",
+    "name": "Angor",
+    "script": "I"
+  },
+  {
+    "code": "aog",
+    "name": "Angoram",
+    "script": "I"
+  },
+  {
+    "code": "tnd",
+    "name": "Angosturas Tunebo",
+    "script": "I"
+  },
+  {
+    "code": "awg",
+    "name": "Anguthimri",
+    "script": "I"
+  },
+  {
+    "code": "ypn",
+    "name": "Ani Phowa",
+    "script": "I"
+  },
+  {
+    "code": "blo",
+    "name": "Anii",
+    "script": "I"
+  },
+  {
+    "code": "anf",
+    "name": "Animere",
+    "script": "I"
+  },
+  {
+    "code": "aoi",
+    "name": "Anindilyakwa",
+    "script": "I"
+  },
+  {
+    "code": "aqk",
+    "name": "Aninka",
+    "script": "I"
+  },
+  {
+    "code": "boj",
+    "name": "Anjam",
+    "script": "I"
+  },
+  {
+    "code": "aak",
+    "name": "Ankave",
+    "script": "I"
+  },
+  {
+    "code": "amx",
+    "name": "Anmatyerre",
+    "script": "I"
+  },
+  {
+    "code": "nun",
+    "name": "Anong",
+    "script": "I"
+  },
+  {
+    "code": "anj",
+    "name": "Anor",
+    "script": "I"
+  },
+  {
+    "code": "ans",
+    "name": "Anserma",
+    "script": "I"
+  },
+  {
+    "code": "and",
+    "name": "Ansus",
+    "script": "I"
+  },
+  {
+    "code": "ant",
+    "name": "Antakarinya",
+    "script": "I"
+  },
+  {
+    "code": "xmv",
+    "name": "Antankarana Malagasy",
+    "script": "I"
+  },
+  {
+    "code": "aig",
+    "name": "Antigua and Barbuda Creole English",
+    "script": "I"
+  },
+  {
+    "code": "anl",
+    "name": "Anu-Hkongso Chin",
+    "script": "I"
+  },
+  {
+    "code": "anu",
+    "name": "Anuak",
+    "script": "I"
+  },
+  {
+    "code": "cko",
+    "name": "Anufo",
+    "script": "I"
+  },
+  {
+    "code": "aui",
+    "name": "Anuki",
+    "script": "I"
+  },
+  {
+    "code": "auq",
+    "name": "Anus",
+    "script": "I"
+  },
+  {
+    "code": "aud",
+    "name": "Anuta",
+    "script": "I"
+  },
+  {
+    "code": "any",
+    "name": "Anyin",
+    "script": "I"
+  },
+  {
+    "code": "mtb",
+    "name": "Anyin Morofo",
+    "script": "I"
+  },
+  {
+    "code": "njo",
+    "name": "Ao Naga",
+    "script": "I"
+  },
+  {
+    "code": "pni",
+    "name": "Aoheng",
+    "script": "I"
+  },
+  {
+    "code": "aor",
+    "name": "Aore",
+    "script": "I"
+  },
+  {
+    "code": "kbx",
+    "name": "Ap Ma",
+    "script": "I"
+  },
+  {
+    "code": "xap",
+    "name": "Apalachee",
+    "script": "I"
+  },
+  {
+    "code": "apy",
+    "name": "Apalaí",
+    "script": "I"
+  },
+  {
+    "code": "ena",
+    "name": "Apali",
+    "script": "I"
+  },
+  {
+    "code": "mip",
+    "name": "Apasco-Apoala Mixtec",
+    "script": "I"
+  },
+  {
+    "code": "apt",
+    "name": "Apatani",
+    "script": "I"
+  },
+  {
+    "code": "api",
+    "name": "Apiaká",
+    "script": "I"
+  },
+  {
+    "code": "apn",
+    "name": "Apinayé",
+    "script": "I"
+  },
+  {
+    "code": "app",
+    "name": "Apma",
+    "script": "I"
+  },
+  {
+    "code": "ahp",
+    "name": "Aproumu Aizi",
+    "script": "I"
+  },
+  {
+    "code": "apu",
+    "name": "Apurinã",
+    "script": "I"
+  },
+  {
+    "code": "apx",
+    "name": "Aputai",
+    "script": "I"
+  },
+  {
+    "code": "xaq",
+    "name": "Aquitanian",
+    "script": "I"
+  },
+  {
+    "code": "ard",
+    "name": "Arabana",
+    "script": "I"
+  },
+  {
+    "code": "arl",
+    "name": "Arabela",
+    "script": "I"
+  },
+  {
+    "code": "ara",
+    "name": "Arabic",
+    "script": "M"
+  },
+  {
+    "code": "arg",
+    "name": "Aragonese",
+    "script": "I"
+  },
+  {
+    "code": "akr",
+    "name": "Araki",
+    "script": "I"
+  },
+  {
+    "code": "rkw",
+    "name": "Arakwal",
+    "script": "I"
+  },
+  {
+    "code": "atq",
+    "name": "Aralle-Tabulahan",
+    "script": "I"
+  },
+  {
+    "code": "stk",
+    "name": "Arammba",
+    "script": "I"
+  },
+  {
+    "code": "aaf",
+    "name": "Aranadan",
+    "script": "I"
+  },
+  {
+    "code": "xrt",
+    "name": "Aranama-Tamique",
+    "script": "I"
+  },
+  {
+    "code": "jbj",
+    "name": "Arandai",
+    "script": "I"
+  },
+  {
+    "code": "aro",
+    "name": "Araona",
+    "script": "I"
+  },
+  {
+    "code": "arp",
+    "name": "Arapaho",
+    "script": "I"
+  },
+  {
+    "code": "arj",
+    "name": "Arapaso",
+    "script": "I"
+  },
+  {
+    "code": "xaj",
+    "name": "Ararandewára",
+    "script": "I"
+  },
+  {
+    "code": "arw",
+    "name": "Arawak",
+    "script": "I"
+  },
+  {
+    "code": "awt",
+    "name": "Araweté",
+    "script": "I"
+  },
+  {
+    "code": "awm",
+    "name": "Arawum",
+    "script": "I"
+  },
+  {
+    "code": "arv",
+    "name": "Arbore",
+    "script": "I"
+  },
+  {
+    "code": "aae",
+    "name": "Arbëreshë Albanian",
+    "script": "I"
+  },
+  {
+    "code": "aqc",
+    "name": "Archi",
+    "script": "I"
+  },
+  {
+    "code": "pka",
+    "name": "Ardhamāgadhī Prākrit",
+    "script": "I"
+  },
+  {
+    "code": "mwc",
+    "name": "Are",
+    "script": "I"
+  },
+  {
+    "code": "aea",
+    "name": "Areba",
+    "script": "I"
+  },
+  {
+    "code": "aem",
+    "name": "Arem",
+    "script": "I"
+  },
+  {
+    "code": "qxu",
+    "name": "Arequipa-La Unión Quechua",
+    "script": "I"
+  },
+  {
+    "code": "aed",
+    "name": "Argentine Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "agj",
+    "name": "Argobba",
+    "script": "I"
+  },
+  {
+    "code": "agf",
+    "name": "Arguni",
+    "script": "I"
+  },
+  {
+    "code": "arh",
+    "name": "Arhuaco",
+    "script": "I"
+  },
+  {
+    "code": "aqr",
+    "name": "Arhâ",
+    "script": "I"
+  },
+  {
+    "code": "aok",
+    "name": "Arhö",
+    "script": "I"
+  },
+  {
+    "code": "aac",
+    "name": "Ari",
+    "script": "I"
+  },
+  {
+    "code": "laz",
+    "name": "Aribwatsa",
+    "script": "I"
+  },
+  {
+    "code": "ylu",
+    "name": "Aribwaung",
+    "script": "I"
+  },
+  {
+    "code": "aai",
+    "name": "Arifama-Miniafia",
+    "script": "I"
+  },
+  {
+    "code": "aqg",
+    "name": "Arigidi",
+    "script": "I"
+  },
+  {
+    "code": "ark",
+    "name": "Arikapú",
+    "script": "I"
+  },
+  {
+    "code": "ari",
+    "name": "Arikara",
+    "script": "I"
+  },
+  {
+    "code": "ait",
+    "name": "Arikem",
+    "script": "I"
+  },
+  {
+    "code": "xrn",
+    "name": "Arin",
+    "script": "I"
+  },
+  {
+    "code": "luc",
+    "name": "Aringa",
+    "script": "I"
+  },
+  {
+    "code": "xrm",
+    "name": "Armazic",
+    "script": "I"
+  },
+  {
+    "code": "hye",
+    "name": "Armenian",
+    "script": "I"
+  },
+  {
+    "code": "aen",
+    "name": "Armenian Sign Language",
+    "script": "I"
+  },
+  {
+    "code": "apr",
+    "name": "Arop-Lokep",
+    "script": "I"
+  },
+  {
+    "code": "aps",
+    "name": "Arop-Sissano",
+    "script": "I"
+  },
+  {
+    "code": "aia",
+    "name": "Arosi",
+    "script": "I"
+  },
+  {
+    "code": "frp",
+    "name": "Arpitan",
+    "script": "I"
+  },
+  {
+    "code": "rrt",
+    "name": "Arritinngithigh",
+    "script": "I"
+  },
+  {
+    "code": "atz",
+    "name": "Arta",
+    "script": "I"
+  },
+  {
+    "code": "msy",
+    "name": "Aruamu",
+    "script": "I"
+  },
+  {
+    "code": "aur",
+    "name": "Aruek",
+    "script": "I"
+  },
+  {
+    "code": "lsr",
+    "name": "Aruop",
+    "script": "I"
+  },
+  {
+    "code": "atx",
+    "name": "Arutani",
+    "script": "I"
+  },
+  {
+    "code": "aru",
+    "name": "Aruá (Amazonas State)",
+    "script": "I"
+  },
+  {
+    "code": "arx",
+    "name": "Aruá (Rodonia State)",
+    "script": "I"
+  },
+  {
+    "code": "aat",
+    "name": "Arvanitika Albanian",
+    "script": "I"
+  },
+  {
+    "code": "asz",
+    "name": "As",
+    "script": "I"
+  },
+  {
+    "code": "mtv",
+    "name": "Asaro'o",
+    "script": "I"
+  },
+  {
+    "code": "ahs",
+    "name": "Ashe",
+    "script": "I"
+  },
+  {
+    "code": "ask",
+    "name": "Ashkun",
+    "script": "I"
+  },
+  {
+    "code": "csh",
+    "name": "Asho Chin",
+    "script": "I"
+  },
+  {
+    "code": "atn",
+    "name": "Ashtiani",
+    "script": "I"
+  },
+  {
+    "code": "cni",
+    "name": "Asháninka",
+    "script": "I"
+  },
+  {
+    "code": "cjo",
+    "name": "Ashéninka Pajonal",
+    "script": "I"
+  },
+  {
+    "code": "prq",
+    "name": "Ashéninka Perené",
+    "script": "I"
+  },
+  {
+    "code": "asl",
+    "name": "Asilulu",
+    "script": "I"
+  },
+  {
+    "code": "eiv",
+    "name": "Askopan",
+    "script": "I"
+  },
+  {
+    "code": "asv",
+    "name": "Asoa",
+    "script": "I"
+  },
+  {
+    "code": "asm",
+    "name": "Assamese",
+    "script": "I"
+  },
+  {
+    "code": "xss",
+    "name": "Assan",
+    "script": "I"
+  },
+  {
+    "code": "sjg",
+    "name": "Assangori",
+    "script": "I"
+  }
+]

@@ -1,0 +1,43 @@
+# MADLAD-400 Android Translator
+
+This project contains an Android 7.1+ application that lets users authenticate against your MADLAD-400 service, manage accounts, and submit translation jobs across the full MADLAD language catalog. The app is implemented with Jetpack Compose and targets API level 34 while maintaining compatibility down to Android 7.1 (API 25).
+
+## Features
+
+- **Authentication** – Login and account creation flows that talk directly to your MADLAD API. The registration form includes an order number field so you can bind new accounts to provisioning orders.
+- **MADLAD catalog support** – The translator screen fetches live language metadata from the API and automatically falls back to an embedded ISO-639 snapshot of 400 MADLAD-compatible languages when the network is unavailable.
+- **Translation workflow** – Pick source and target languages, enter free-form text, and submit translation requests authenticated with the stored bearer token.
+- **Session handling** – Securely persists the API base URL, username, and bearer token with DataStore so credentials survive process restarts.
+- **Compose-first UI** – Material 3 design, navigation, and responsive layouts tuned for phones and tablets.
+
+## API expectations
+
+The application assumes your MADLAD pod exposes the following endpoints under the base URL entered on the login screen:
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/auth/login` | `POST` | Accepts `{ "username": "...", "password": "..." }` and returns `{ "token": "..." }`. |
+| `/auth/register` | `POST` | Accepts `{ "username": "...", "password": "...", "orderNumber": "..." }` and may optionally return `{ "token": "..." }` to log the user in immediately. |
+| `/languages` | `GET` | Returns a JSON array of MADLAD-400 language descriptors matching the `MadladLanguage` model (`code`, `name`, optional `script`). |
+| `/translate` | `POST` | Accepts `{ "sourceLanguage": "...", "targetLanguage": "...", "text": "..." }` with a bearer token header and responds with `{ "translatedText": "..." }`. |
+
+If any endpoint is unavailable the UI gracefully degrades to the bundled catalog and surfaces meaningful error messages to the user.
+
+## Building
+
+```
+./gradlew assembleDebug
+```
+
+Android Studio Hedgehog or later is recommended for development. The project uses the Gradle 8.5 wrapper, Kotlin 1.9, and Jetpack Compose Material 3.
+
+## Running
+
+1. Open the project in Android Studio and let Gradle sync.
+2. Update the **API Base URL** field on the login or create-account screen to point at your MADLAD pod (for example, `https://madlad.example.com/api/`).
+3. Sign in with existing credentials or create an account (remember to supply the order number).
+4. After authentication the translator view shows the full MADLAD-400 catalog and lets you submit translation jobs.
+
+## Testing the networking layer
+
+During development you can point the application at a staging MADLAD pod or use tools like MockWebServer to simulate the endpoints described above.
