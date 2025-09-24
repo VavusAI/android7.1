@@ -9,57 +9,42 @@ import com.example.vavusaitranslator.network.TranslateRequest
 import com.example.vavusaitranslator.supabase.SupabaseSync
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
 
 class VavusRepository(
     private val sessionManager: SessionManager,
     private val serviceFactory: VavusServiceFactory,
     private val languageCatalog: LocalLanguageCatalog,
+    translatorBaseUrl: String,
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val supabaseSync: SupabaseSync? = null
 ) {
-    private val apiState: MutableStateFlow<VavusApi?> = MutableStateFlow(null)
+    private val configuredBaseUrl = translatorBaseUrl.trim()
 
-    val activeBaseUrl: Flow<String?> = sessionManager.baseUrl
-
-    suspend fun updateBaseUrl(baseUrl: String) {
-        sessionManager.updateBaseUrl(baseUrl)
-        apiState.update { serviceFactory.create(baseUrl) }
+    private val api: VavusApi by lazy {
+        val baseUrl = configuredBaseUrl.takeIf { it.isNotBlank() }
+            ?: error("Translator API base URL missing")
+        serviceFactory.create(baseUrl)
     }
 
-    private suspend fun ensureApi(baseUrl: String? = null): VavusApi {
-        val cached = apiState.value
-        val resolvedBaseUrl = baseUrl ?: sessionManager.baseUrl.first()
-        if (cached != null && baseUrl == null) {
-            return cached
-        }
-        require(!resolvedBaseUrl.isNullOrBlank()) { "Base URL is required" }
-        val api = serviceFactory.create(resolvedBaseUrl)
-        apiState.value = api
-        return api
-    }
+    private fun requireApi(): VavusApi = api
 
-    suspend fun login(baseUrl: String, username: String, password: String): Result<Unit> = runCatching {
+    suspend fun login(username: String, password: String): Result<Unit> = runCatching {
         withContext(ioDispatcher) {
-            val api = ensureApi(baseUrl)
+            val api = requireApi()
             val response = api.login(LoginRequest(username = username, password = password))
             sessionManager.persistSession(
                 token = response.token,
-                baseUrl = baseUrl,
                 username = username
             )
-            apiState.value = serviceFactory.create(baseUrl)
-            supabaseSync?.recordLogin(username = username, baseUrl = baseUrl)
+            supabaseSync?.recordLogin(username = username, baseUrl = configuredBaseUrl)
         }
     }
 
-    suspend fun register(baseUrl: String, username: String, password: String, orderNumber: String): Result<Unit> = runCatching {
+    suspend fun register(username: String, password: String, orderNumber: String): Result<Unit> = runCatching {
         withContext(ioDispatcher) {
-            val api = ensureApi(baseUrl)
+            val api = requireApi()
             val response = api.register(
                 RegisterRequest(
                     username = username,
@@ -68,16 +53,15 @@ class VavusRepository(
                 )
             )
             response.token?.let { token ->
-                sessionManager.persistSession(token = token, baseUrl = baseUrl, username = username)
-                apiState.value = serviceFactory.create(baseUrl)
-                supabaseSync?.recordLogin(username = username, baseUrl = baseUrl)
+                sessionManager.persistSession(token = token, username = username)
+                supabaseSync?.recordLogin(username = username, baseUrl = configuredBaseUrl)
             }
         }
     }
 
     suspend fun fetchLanguages(): Result<List<VavusLanguage>> = runCatching {
         withContext(ioDispatcher) {
-            val api = ensureApi()
+            val api = requireApi()
             api.languages().sortedBy { it.name }
         }
     }
@@ -92,7 +76,7 @@ class VavusRepository(
         withContext(ioDispatcher) {
             val token = sessionManager.authToken.first()
             require(!token.isNullOrBlank()) { "Authentication token missing" }
-            val api = ensureApi()
+            val api = requireApi()
             val response = api.translate(
                 authorization = "Bearer $token",
                 request = TranslateRequest(
@@ -102,11 +86,10 @@ class VavusRepository(
                 )
             )
             val translation = response.translatedText
-            val baseUrl = sessionManager.baseUrl.first().orEmpty()
             val username = sessionManager.username.first().orEmpty()
             supabaseSync?.recordTranslation(
                 username = username,
-                baseUrl = baseUrl,
+                baseUrl = configuredBaseUrl,
                 sourceLanguage = sourceLanguage,
                 targetLanguage = targetLanguage
             )
@@ -116,6 +99,5 @@ class VavusRepository(
 
     suspend fun logout() {
         sessionManager.clearSession()
-        apiState.value = null
     }
 }

@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
@@ -31,22 +30,7 @@ class TranslatorViewModel(
 
     fun refreshLanguages() {
         viewModelScope.launch {
-            val baseUrl = session.baseUrl.firstOrNull()
-            if (baseUrl.isNullOrBlank()) {
-                val fallback = repository.fallbackLanguages()
-                _uiState.update { state ->
-                    val source = fallback.firstOrNull()
-                    val target = fallback.getOrNull(1)
-                    state.copy(
-                        isLoading = false,
-                        languages = fallback,
-                        sourceLanguage = source,
-                        targetLanguage = target,
-                        error = "Configure an API base URL to load live languages."
-                    )
-                }
-                return@launch
-            }
+
             _uiState.update { it.copy(isLoading = true, error = null) }
             val result = repository.fetchLanguages()
             _uiState.update { state ->

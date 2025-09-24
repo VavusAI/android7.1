@@ -110,7 +110,6 @@ class MainActivity : ComponentActivity() {
                         composable(ROUTE_LOGIN) {
                             LoginScreen(
                                 uiState = authUiState,
-                                onBaseUrlChanged = authViewModel::updateBaseUrl,
                                 onUsernameChanged = authViewModel::updateUsername,
                                 onPasswordChanged = authViewModel::updatePassword,
                                 onLogin = authViewModel::login,
@@ -122,7 +121,6 @@ class MainActivity : ComponentActivity() {
                         composable(ROUTE_REGISTER) {
                             CreateAccountScreen(
                                 uiState = authUiState,
-                                onBaseUrlChanged = authViewModel::updateBaseUrl,
                                 onUsernameChanged = authViewModel::updateUsername,
                                 onPasswordChanged = authViewModel::updatePassword,
                                 onOrderNumberChanged = authViewModel::updateOrderNumber,

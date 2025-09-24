@@ -21,13 +21,6 @@ class AuthViewModel(
 
     init {
         viewModelScope.launch {
-            session.baseUrl.collectLatest { baseUrl ->
-                if (!baseUrl.isNullOrBlank()) {
-                    _uiState.update { it.copy(baseUrl = baseUrl) }
-                }
-            }
-        }
-        viewModelScope.launch {
             session.authToken.collectLatest { token ->
                 _uiState.update { it.copy(isLoggedIn = !token.isNullOrBlank()) }
             }
@@ -39,10 +32,6 @@ class AuthViewModel(
                 }
             }
         }
-    }
-
-    fun updateBaseUrl(value: String) {
-        _uiState.update { it.copy(baseUrl = value.trim()) }
     }
 
     fun updateUsername(value: String) {
@@ -63,13 +52,13 @@ class AuthViewModel(
 
     fun login() {
         val state = _uiState.value
-        if (state.baseUrl.isBlank() || state.username.isBlank() || state.password.isBlank()) {
-            _uiState.update { it.copy(error = "Please provide a base URL, username, and password.") }
+        if (state.username.isBlank() || state.password.isBlank()) {
+            _uiState.update { it.copy(error = "Please provide a username and password.") }
             return
         }
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true, error = null) }
-            val result = repository.login(state.baseUrl, state.username, state.password)
+            val result = repository.login(state.username, state.password)
             _uiState.update {
                 it.copy(
                     loading = false,
@@ -81,13 +70,13 @@ class AuthViewModel(
 
     fun register() {
         val state = _uiState.value
-        if (state.baseUrl.isBlank() || state.username.isBlank() || state.password.isBlank() || state.orderNumber.isBlank()) {
+        if (state.username.isBlank() || state.password.isBlank() || state.orderNumber.isBlank()) {
             _uiState.update { it.copy(error = "Please fill in every field, including the order number.") }
             return
         }
         viewModelScope.launch {
             _uiState.update { it.copy(loading = true, error = null) }
-            val result = repository.register(state.baseUrl, state.username, state.password, state.orderNumber)
+            val result = repository.register(state.username, state.password, state.orderNumber)
             _uiState.update {
                 it.copy(
                     loading = false,
@@ -100,7 +89,6 @@ class AuthViewModel(
 }
 
 data class AuthUiState(
-    val baseUrl: String = "",
     val username: String = "",
     val password: String = "",
     val orderNumber: String = "",

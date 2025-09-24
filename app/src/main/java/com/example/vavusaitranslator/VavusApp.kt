@@ -1,6 +1,7 @@
 package com.example.vavusaitranslator
 
 import android.app.Application
+import com.example.vavusaitranslator.BuildConfig
 import com.example.vavusaitranslator.data.LocalLanguageCatalog
 import com.example.vavusaitranslator.data.VavusRepository
 import com.example.vavusaitranslator.data.SessionManager
@@ -28,6 +29,7 @@ class AppContainer(application: Application) {
         sessionManager = sessionManager,
         serviceFactory = serviceFactory,
         languageCatalog = languageCatalog,
+        translatorBaseUrl = BuildConfig.TRANSLATOR_API_BASE_URL,
         supabaseSync = supabaseSync
     )
     val session: SessionManager = sessionManager

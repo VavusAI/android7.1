@@ -32,7 +32,6 @@ import kotlinx.coroutines.launch
 @Composable
 fun CreateAccountScreen(
     uiState: AuthUiState,
-    onBaseUrlChanged: (String) -> Unit,
     onUsernameChanged: (String) -> Unit,
     onPasswordChanged: (String) -> Unit,
     onOrderNumberChanged: (String) -> Unit,
@@ -56,15 +55,6 @@ fun CreateAccountScreen(
             style = MaterialTheme.typography.headlineSmall
         )
         Spacer(modifier = Modifier.height(24.dp))
-        OutlinedTextField(
-            value = uiState.baseUrl,
-            onValueChange = onBaseUrlChanged,
-            label = { Text("API Base URL") },
-            singleLine = true,
-            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
-            modifier = Modifier.fillMaxWidth()
-        )
-        Spacer(modifier = Modifier.height(12.dp))
         OutlinedTextField(
             value = uiState.username,
             onValueChange = onUsernameChanged,
