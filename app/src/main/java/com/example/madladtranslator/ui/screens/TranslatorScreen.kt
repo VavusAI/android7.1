@@ -1,5 +1,3 @@
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
 package com.example.madladtranslator.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
@@ -30,8 +28,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
@@ -96,7 +96,7 @@ fun TranslatorScreen(
             AssistChip(
                 onClick = onSwapLanguages,
                 label = { Text("Swap languages") },
-                leadingIcon = { Icon(imageVector = Icons.Default.Autorenew, contentDescription = null) }
+                leadingIcon = { Icon(imageVector = Icons.Filled.Autorenew, contentDescription = null) }
             )
             AssistChip(onClick = onRefreshLanguages, label = { Text("Refresh languages") })
         }
