@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import com.example.vavusaitranslator.ui.AuthUiState
@@ -32,7 +33,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun LoginScreen(
     uiState: AuthUiState,
-    onUsernameChanged: (String) -> Unit,
+    onEmailChanged: (String) -> Unit,
     onPasswordChanged: (String) -> Unit,
     onLogin: () -> Unit,
     onNavigateToRegister: () -> Unit,
@@ -55,11 +56,14 @@ fun LoginScreen(
         )
         Spacer(modifier = Modifier.height(24.dp))
         OutlinedTextField(
-            value = uiState.username,
-            onValueChange = onUsernameChanged,
-            label = { Text("Username") },
+            value = uiState.email,
+            onValueChange = onEmailChanged,
+            label = { Text("Email address") },
             singleLine = true,
-            keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
+            keyboardOptions = KeyboardOptions.Default.copy(
+                imeAction = ImeAction.Next,
+                keyboardType = KeyboardType.Email
+            ),
             modifier = Modifier.fillMaxWidth()
         )
         Spacer(modifier = Modifier.height(12.dp))

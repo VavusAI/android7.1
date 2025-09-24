@@ -110,7 +110,7 @@ class MainActivity : ComponentActivity() {
                         composable(ROUTE_LOGIN) {
                             LoginScreen(
                                 uiState = authUiState,
-                                onUsernameChanged = authViewModel::updateUsername,
+                                onEmailChanged = authViewModel::updateEmail,
                                 onPasswordChanged = authViewModel::updatePassword,
                                 onLogin = authViewModel::login,
                                 onNavigateToRegister = {
@@ -121,7 +121,7 @@ class MainActivity : ComponentActivity() {
                         composable(ROUTE_REGISTER) {
                             CreateAccountScreen(
                                 uiState = authUiState,
-                                onUsernameChanged = authViewModel::updateUsername,
+                                onEmailChanged = authViewModel::updateEmail,
                                 onPasswordChanged = authViewModel::updatePassword,
                                 onOrderNumberChanged = authViewModel::updateOrderNumber,
                                 onCreateAccount = authViewModel::register,

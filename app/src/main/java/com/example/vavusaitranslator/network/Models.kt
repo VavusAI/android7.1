@@ -1,7 +1,7 @@
 package com.example.vavusaitranslator.network
 
 data class LoginRequest(
-    val username: String,
+    val email: String,
     val password: String
 )
 
@@ -12,7 +12,7 @@ data class LoginResponse(
 )
 
 data class RegisterRequest(
-    val username: String,
+    val email: String,
     val password: String,
     val orderNumber: String
 )

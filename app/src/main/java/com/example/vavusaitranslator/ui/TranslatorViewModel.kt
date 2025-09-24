@@ -22,8 +22,8 @@ class TranslatorViewModel(
 
     init {
         viewModelScope.launch {
-            session.username.collectLatest { username ->
-                _uiState.update { it.copy(username = username.orEmpty()) }
+            session.email.collectLatest { email ->
+                _uiState.update { it.copy(email = email.orEmpty()) }
             }
         }
     }
@@ -128,7 +128,7 @@ class TranslatorViewModel(
 }
 
 data class TranslatorUiState(
-    val username: String = "",
+    val email: String = "",
     val languages: List<VavusLanguage> = emptyList(),
     val sourceLanguage: VavusLanguage? = null,
     val targetLanguage: VavusLanguage? = null,

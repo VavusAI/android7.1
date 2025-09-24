@@ -20,23 +20,27 @@ class SessionManager(context: Context) {
         val TOKEN = stringPreferencesKey("auth_token")
         val LEGACY_BASE_URL = stringPreferencesKey("base_url")
         val USERNAME = stringPreferencesKey("username")
+        val EMAIL = stringPreferencesKey("email")
     }
 
     val authToken: Flow<String?> = dataStore.data.map { it[Keys.TOKEN] }
-    val username: Flow<String?> = dataStore.data.map { it[Keys.USERNAME] }
-
-    suspend fun persistSession(token: String, username: String) {
+    val email: Flow<String?> = dataStore.data.map { prefs ->
+        prefs[Keys.EMAIL] ?: prefs[Keys.USERNAME]
+    }
+    suspend fun persistSession(token: String, email: String) {
         dataStore.edit { prefs ->
             prefs[Keys.TOKEN] = token
-            prefs[Keys.USERNAME] = username
+            prefs[Keys.EMAIL] = email
             // Ensure legacy installs drop the deprecated base URL entry.
             prefs.remove(Keys.LEGACY_BASE_URL)
+            prefs.remove(Keys.USERNAME)
         }
     }
 
     suspend fun clearSession() {
         dataStore.edit { prefs ->
             prefs.remove(Keys.TOKEN)
+            prefs.remove(Keys.EMAIL)
             prefs.remove(Keys.USERNAME)
             prefs.remove(Keys.LEGACY_BASE_URL)
         }

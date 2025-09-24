@@ -12,6 +12,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 
+private const val OFFLINE_TOKEN = "offline-preview-token"
+
 class VavusRepository(
     private val sessionManager: SessionManager,
     private val serviceFactory: VavusServiceFactory,
@@ -22,47 +24,61 @@ class VavusRepository(
 ) {
     private val configuredBaseUrl = translatorBaseUrl.trim()
 
-    private val api: VavusApi by lazy {
-        val baseUrl = configuredBaseUrl.takeIf { it.isNotBlank() }
-            ?: error("Translator API base URL missing")
-        serviceFactory.create(baseUrl)
-    }
-
-    private fun requireApi(): VavusApi = api
-
-    suspend fun login(username: String, password: String): Result<Unit> = runCatching {
-        withContext(ioDispatcher) {
-            val api = requireApi()
-            val response = api.login(LoginRequest(username = username, password = password))
-            sessionManager.persistSession(
-                token = response.token,
-                username = username
-            )
-            supabaseSync?.recordLogin(username = username, baseUrl = configuredBaseUrl)
+    private val api: VavusApi? by lazy {
+        configuredBaseUrl.takeIf { it.isNotBlank() }?.let { baseUrl ->
+            serviceFactory.create(baseUrl)
         }
     }
 
-    suspend fun register(username: String, password: String, orderNumber: String): Result<Unit> = runCatching {
+    suspend fun login(email: String, password: String): Result<Unit> = runCatching {
         withContext(ioDispatcher) {
-            val api = requireApi()
+            val api = this@VavusRepository.api
+            if (api == null) {
+                sessionManager.persistSession(token = OFFLINE_TOKEN, email = email)
+                return@withContext
+            }
+            val response = api.login(LoginRequest(email = email, password = password))
+            sessionManager.persistSession(
+                token = response.token,
+                email = email
+            )
+            if (configuredBaseUrl.isNotBlank()) {
+                supabaseSync?.recordLogin(email = email, baseUrl = configuredBaseUrl)
+            }
+        }
+    }
+
+    suspend fun register(email: String, password: String, orderNumber: String): Result<Unit> = runCatching {
+        withContext(ioDispatcher) {
+            val api = this@VavusRepository.api
+            if (api == null) {
+                sessionManager.persistSession(token = OFFLINE_TOKEN, email = email)
+                return@withContext
+            }
             val response = api.register(
                 RegisterRequest(
-                    username = username,
+                    email = email,
                     password = password,
                     orderNumber = orderNumber
                 )
             )
             response.token?.let { token ->
-                sessionManager.persistSession(token = token, username = username)
-                supabaseSync?.recordLogin(username = username, baseUrl = configuredBaseUrl)
+                sessionManager.persistSession(token = token, email = email)
+                if (configuredBaseUrl.isNotBlank()) {
+                    supabaseSync?.recordLogin(email = email, baseUrl = configuredBaseUrl)
+                }
             }
         }
     }
 
     suspend fun fetchLanguages(): Result<List<VavusLanguage>> = runCatching {
         withContext(ioDispatcher) {
-            val api = requireApi()
-            api.languages().sortedBy { it.name }
+            val api = this@VavusRepository.api
+            if (api == null) {
+                languageCatalog.getAll().sortedBy { it.name }
+            } else {
+                api.languages().sortedBy { it.name }
+            }
         }
     }
 
@@ -76,7 +92,8 @@ class VavusRepository(
         withContext(ioDispatcher) {
             val token = sessionManager.authToken.first()
             require(!token.isNullOrBlank()) { "Authentication token missing" }
-            val api = requireApi()
+            val api = this@VavusRepository.api
+                ?: throw IllegalStateException("Translator service is not configured. Please set the API base URL before translating.")
             val response = api.translate(
                 authorization = "Bearer $token",
                 request = TranslateRequest(
@@ -86,13 +103,15 @@ class VavusRepository(
                 )
             )
             val translation = response.translatedText
-            val username = sessionManager.username.first().orEmpty()
-            supabaseSync?.recordTranslation(
-                username = username,
-                baseUrl = configuredBaseUrl,
-                sourceLanguage = sourceLanguage,
-                targetLanguage = targetLanguage
-            )
+            val email = sessionManager.email.first().orEmpty()
+            if (configuredBaseUrl.isNotBlank()) {
+                supabaseSync?.recordTranslation(
+                    email = email,
+                    baseUrl = configuredBaseUrl,
+                    sourceLanguage = sourceLanguage,
+                    targetLanguage = targetLanguage
+                )
+            }
             translation
         }
     }

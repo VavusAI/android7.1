@@ -60,8 +60,7 @@ fun TranslatorScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         Text(
-            text = if (uiState.username.isBlank()) "Welcome" else "Welcome ${uiState.username}",
-            style = MaterialTheme.typography.titleLarge
+            text = if (uiState.email.isBlank()) "Welcome" else "Welcome ${uiState.email}",            style = MaterialTheme.typography.titleLarge
         )
         Text(
             text = "Translate effortlessly across the full 419 Vavus language inventory.",

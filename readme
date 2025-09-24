@@ -21,8 +21,7 @@ PostgREST table. Configuration is driven entirely by environment data so secrets
 3. Provide matching environment variables when building in CI/CD (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`).
    The Gradle script automatically prefers project properties, then the `config/runpod` file, and finally process environment
    variables.
-4. Create a `translator_audit_log` table in Supabase with columns that match the payload written by the app (`username`,
-   `base_url`, `event_type`, `occurred_at`, and an optional `metadata` JSON column).
+- **Session handling** – Securely persists the API base URL, email address, and bearer token with DataStore so credentials survive process restarts.   `base_url`, `event_type`, `occurred_at`, and an optional `metadata` JSON column).
 
 If the configuration values are missing the Supabase features are silently disabled and the translator continues to work against
 your MADLAD API as before.
@@ -34,8 +33,8 @@ The application assumes your MADLAD pod exposes the following endpoints under th
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/auth/login` | `POST` | Accepts `{ "username": "...", "password": "..." }` and returns `{ "token": "..." }`. |
-| `/auth/register` | `POST` | Accepts `{ "username": "...", "password": "...", "orderNumber": "..." }` and may optionally return `{ "token": "..." }` to log the user in immediately. |
-| `/languages` | `GET` | Returns a JSON array of MADLAD-400 language descriptors matching the `MadladLanguage` model (`code`, `name`, optional `script`). |
+| `/auth/login` | `POST` | Accepts `{ "email": "...", "password": "..." }` and returns `{ "token": "..." }`. |
+| `/auth/register` | `POST` | Accepts `{ "email": "...", "password": "...", "orderNumber": "..." }` and may optionally return `{ "token": "..." }` to log the user in immediately. || `/languages` | `GET` | Returns a JSON array of MADLAD-400 language descriptors matching the `MadladLanguage` model (`code`, `name`, optional `script`). |
 | `/translate` | `POST` | Accepts `{ "sourceLanguage": "...", "targetLanguage": "...", "text": "..." }` with a bearer token header and responds with `{ "translatedText": "..." }`. |
 
 If any endpoint is unavailable the UI gracefully degrades to the bundled catalog and surfaces meaningful error messages to the user.
