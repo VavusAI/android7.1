@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'  // harmless if unused
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId "com.example.madladtranslator"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+        }
+    }
+
+    // If you have Java 8 sources in module, comment these; AGP 3.1.0 supports basic 1.8.
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Legacy AndroidX wasn’t fully on API 25 era; use support libs if needed.
+    // If you were already on AndroidX and it compiles, keep those instead.
+    implementation 'com.android.support:appcompat-v7:25.4.0'
+    implementation 'com.android.support:design:25.4.0'
+    implementation 'com.android.support:recyclerview-v7:25.4.0'
+    implementation 'com.android.support:cardview-v7:25.4.0'
+
+    // Network/JSON (optional — add only if your code uses them)
+    // implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    // implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    // implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+}
